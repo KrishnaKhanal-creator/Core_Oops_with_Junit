@@ -9,14 +9,14 @@ public class Employee{
 	private String lastName;
 	private Phone phoneNumber;//can have a max of one phone
 	private Address address; //can have a max of one address
-	private Role[] employeeRoles; //can have many roles
+	private List<Role> employeeRoles; //can have many roles
 	private Boolean isAContractor;//can be of two types Contractor and Full time
 	private Boolean isAFullTime;
 	
 	public Employee() {
 	}
 
-	public Employee(int id, String firstName, String lastName, Phone phoneNumber, Address address, Role[] employeeRoles, Boolean isAContractor, Boolean isAFullTime) {
+	public Employee(int id, String firstName, String lastName, Phone phoneNumber, Address address, List<Role> employeeRoles, Boolean isAContractor, Boolean isAFullTime) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -27,7 +27,7 @@ public class Employee{
 		this.isAFullTime = isAFullTime;
 	}
 
-	public void setEmployeeRoles(Role[] employeeRoles) {
+	public void setEmployeeRoles(List<Role> employeeRoles) {
 		this.employeeRoles = employeeRoles;
 	}
 
@@ -51,7 +51,7 @@ public class Employee{
 		return address;
 	}
 
-	public Role[] getEmployeeRoles() {
+	public List<Role> getEmployeeRoles() {
 		return employeeRoles;
 	}
 

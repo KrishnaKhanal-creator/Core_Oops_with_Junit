@@ -10,14 +10,18 @@ import java.util.Map;
 public class HRService {
 	private Map<Integer, Company> db = null;
 	List<Employee> employees = new ArrayList<>();
+	List<Role> rolesOfTrump = new ArrayList<>();
+	List<Role> rolesOfJoe = new ArrayList<>();
 	Company company = null;
 
 	public HRService() {
 		db = new HashMap<>();
-		Role[] rolesOfDonal = {new Role(100,"X-President"),new Role(101,"X-Leader")};
+		rolesOfTrump.add(new Role(100,"X-President"));
+		rolesOfTrump.add(new Role(101,"X-Leader"));
 		employees.add(new Employee(11,"Donal","Trump",new Phone("253","2850245","+1"),
-				new Address("76969","USA","Texas","Irving","3309 Esters Rd", "Apt 116"),rolesOfDonal,true,false));
-		Role[] rolesOfJoe = {new Role(100,"Current President"),new Role(101,"Current Leader")};
+				new Address("76969","USA","Texas","Irving","3309 Esters Rd", "Apt 116"),rolesOfTrump,true,false));
+		rolesOfJoe.add(new Role(100,"Current President"));
+		rolesOfJoe.add(new Role(101,"Current Leader"));
 		employees.add(new Employee(12,"Joe","Biden",new Phone("469","256487","+1"),
 				new Address("98523","USA","Washington","Kent","116th Ave Kent", "Unit 928"),rolesOfJoe,false,true));
 		db.put(1,new Company(1,"IMCS", employees));

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TransactionPicker {
-    public static void pickTransaction(){
+    public  static void pickTransaction(){
         HRService hrService = new HRService();
         Scanner input = new Scanner(System.in);
         int choice;
@@ -78,8 +78,8 @@ public class TransactionPicker {
 
                     System.out.println("Enter if the employee is FullTime(true/false)");
                     Boolean isFullTime = input.nextBoolean();
-
-                    Role[] roles = {new Role(0, roleName)};
+                    List<Role> roles = new ArrayList<>();
+                    roles.add(new Role(0, roleName));
 
                     Employee employee = new Employee(empId, firstName, lastName, new Phone(areaCode, number, countryCode), new Address(zipCode, country, state, city, line1, line2), roles, isContractor, isFullTime);
                     hrService.addEmployee(companyId, employee);
