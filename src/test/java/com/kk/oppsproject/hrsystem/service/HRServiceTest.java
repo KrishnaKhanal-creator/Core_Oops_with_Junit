@@ -60,7 +60,7 @@ public class HRServiceTest {
     @DisplayName("if search method with company id and user id/employee id is working as expected")
     void testSearchWithCompanyIdAndEmployeeId() {
         assertAll(
-//                () -> assertEquals(employee1,hrService.search(1,12),"with valid companyId and valid employeeId"),
+                () -> assertEquals(employee1,hrService.search(1,12),"with valid companyId and valid employeeId"),
                 () -> assertEquals(null,hrService.search(0,12),"with invalid company id and valid userId/employee id"),
                 () -> assertEquals(null,hrService.search(1,0),"with valid company id and invalid userId/employee id")
         );
@@ -72,7 +72,7 @@ public class HRServiceTest {
     @DisplayName("if search method with company id and user first name and lastname id is working as expected")
     void testSearchWithFirstnameAndLastname() {
         assertAll(
-//                () -> assertEquals(listOfEmployees,hrService.search(1,"Joe","Biden"),"with valid name and valid name"),
+                () -> assertEquals(listOfEmployees,hrService.search(1,"Joe","Biden"),"with valid name and valid name"),
                 () -> assertEquals(null,hrService.search(2,"Joe","Biden"),"with invalid company id but valid name"),
                 () -> assertEquals(null,hrService.search(1,"Invalid","Name"),"with valid company id but invalid name")
         );
